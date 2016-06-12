@@ -1,7 +1,7 @@
 # Yet another Git hooks collection
 Contains:
- - Git commit message checker
- - Pre-commit linter
+ - [Git commit message checker](https://github.com/greebamax/yaghc#git-commit-message-checker)
+ - [Pre-commit linter](https://github.com/greebamax/yaghc#pre-commit-linter)
 
 ##### Git commit message checker
 The hook script validates commit messages on each commit.
@@ -10,7 +10,7 @@ Allowed format:
 
 Otherwise you can use one of allowed words at the start of commit message to determine commit kind.
 ##### Pre-commit linter
-Runs ESlinter on changed js files
+Run ESlint only on changed and added to commit **.js** files
 
 #### Installation
 Copy hook file to **.git/hooks/** directory, remove **.sh** and make it executable
@@ -35,4 +35,4 @@ Also you can add scripts into your `"scripts"` block of the `package.json` to in
 ### Todos
  - add pre-commit hook to run tests
  - try to use symbolic links in future
- - figure out how to execute many actions after hook will be triggered and and separate this actions into multiple files
+ - figure out how to execute many actions after hook will be triggered and separate this actions into multiple files
