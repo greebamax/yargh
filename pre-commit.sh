@@ -9,8 +9,6 @@ Your commit contains files that should pass ESLint but do not.
 Please fix ESLint errors and try again.
 "
 
-success_commmit_msg="COMMIT SUCCEEDED"
-
 eslint_missing_msg="
 ESLint installed locally requires
 Run 'npm install' first
@@ -36,7 +34,7 @@ eslint_cfg_local=.eslintrc # path to project eslint config
 is_eslint_exist=$(command -v $eslint_local)
 
 if [ ! -x "$is_eslint_exist" ] ; then
-  echo $eslint_missing_msg
+  echo "$eslint_missing_msg" >&2
   exit 1
 fi
 
@@ -68,10 +66,9 @@ if [ ! -z "${files}" ]; then
   echo "JavaScript validation complete"
 
   if ! $pass; then
-    echo $failed_commit_msg
+    echo "$failed_commit_msg" >&2
     exit 1
   else
-    echo $success_commmit_msg
     exit 0
   fi
 
