@@ -11,11 +11,10 @@ set +x
 function join { local IFS="$1"; shift; echo "$*"; }
 
 # allowed prefixes
-jira_project_prefixes=(AG ND) # list of JIRA projects prefixes
 whitelisted_prefixes=(FIX HOTFIX REFACTORING TYPO TECH TEST) # allowed words which used to determine commit kind
 
 # regex to validate commit message
-commit_regex="^(Merge|$(join \| ${whitelisted_prefixes[@]})|($(join \| ${jira_project_prefixes[@]})){1}\-[0-9]+){1}[[:blank:]]"
+commit_regex="^(Merge|$(join \| ${whitelisted_prefixes[@]})|[A-Z]+\-[0-9]+){1}[[:blank:]]"
 
 error_msg="
 ABORTING COMMIT:
