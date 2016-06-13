@@ -20,11 +20,11 @@ function join { local IFS="$1"; shift; echo "$*"; }
 supported_files=( js )
 
 # regex to match changed files from git status output
-pattern="[AM?]+\s.+\.($(join \| ${supported_files[@]}))$"
+pattern="\.($(join \| ${supported_files[@]}))$"
 
 # define changed files
 function changed_files {
-  echo $(git status -sb | grep -E $pattern | cut -c3-)
+  echo $(git diff --name-only --cached --diff-filter=AM | grep -E $pattern)
 }
 
 # ESLint configure
