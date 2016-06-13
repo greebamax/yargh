@@ -34,6 +34,7 @@ Also you can add scripts into your `"scripts"` block of the `package.json` to in
 ```
 ### Todos
  - add check which determines if hooks exist before removal
+ - execute linter for all changed files simultaneously
  - add pre-commit hook to run tests
  - try to use symbolic links in future
  - figure out how to execute many actions after hook will be triggered and separate this actions into multiple files

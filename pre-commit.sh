@@ -50,6 +50,7 @@ if [ ! -z "${files}" ]; then
   echo "Validating JavaScript:"
   pass=true
 
+  # TODO: execute linter for all files to avoid restarting linter and decrease linting time
   for file in ${files}; do
 
     lint_result=$(lint $file)
