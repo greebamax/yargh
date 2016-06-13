@@ -1,4 +1,3 @@
-
 #!/bin/sh
 #
 # The hook script validates commit messages on each commit.
